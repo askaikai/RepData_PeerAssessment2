@@ -127,7 +127,7 @@ dev.off()
 ```
 
 To visualize easier I create bar graphs on top  one another.  
-``` {r histTop10}
+``` {r histTop10, results='hide'}
 library(reshape2)
 dfEcon = melt(dEcon[1:10,], measure.vars = c("Total", "Property","Crop"), variable.name = 'Category',value.name = 'variable')
 dfHealth = melt(dPopHealth[1:10,], measure.vars = c("Total", "Fatality","Injury"), variable.name = 'Category',value.name = 'variable')
@@ -157,17 +157,17 @@ dev.off()
 ## Results
 The present analysis analyzed the effect of severe weather events on population health and economy based on the data collected between 1950 and 2011.    
 
-![plot of chunk top10popHealthDamage](top10popHealthDamage.png)
+![plot of chunk top10popHealthDamage](top10popHealthDamage.png)  
 Table above lists the 10 most severe weather events in terms of **population health**, sorted by the sum of fatalities and injuries.     
 
 Tornade caused by far the most number of both fatalities and injuries compared to any other events. Following Tornado, High Wind caused the second largest number of total population health damage, because of its high incidence of injuries, but not neccessarily fatalities. Excessive heat, though ranked third by total cases, actually caused more fatalities than High Wind. Events ranked between second and fifth appeared to have very high number of injuries, resulted in considerably higher Total damage than other events. In fact, the Total number of cases for the 5th most severe event (Lightening) is almost double those of the 6th event (Heat).       
 
-![plot of chunk top10econDamage](top10econDamage.png)
+![plot of chunk top10econDamage](top10econDamage.png)  
 Table above lists the 10 most severe weather events in terms of **economic consequences**, sorted by the sum of dollar amounts from propoerty and crop damages.  
 
 Flood caused the most severe damage to the economy; in fact, more than double the damage than the second event, Hurricane (Typhoon) in both Property and Crop (thus, Total as well). Tornade ranked third, close to Hurricane (Typhoon)'s Property damage, but not in Crop damage. The negative effects of the forth event, Storm surge/Tide were focused on Property damages.  
 
-![plot of chunk histTop10](histTop10.png)
+![plot of chunk histTop10](histTop10.png)  
 Figure above provides the visual description of the results. Top graph summarizes the same top 10 events in the first table above, based on Injury, Fatality, and Total of those reports. Bottom graph summarizes the same top 10 events in the second table above, based on Crop and Property damage, and Total of them in dollar amount.  
 
 It is clerly shown that the Tornade's negative effect to the population health was due to its high incidence of injuries, though it still caused the largest number of fatalities (top). Tornade also caused significant amount of damage to property and crop (bottom). In fact, it ranked third in Ecomonic damage. Flood, which ranked the first in the economic damage (bottom), caused significant amount of Property damage compared to other events. It also ranked forth in population health damage (top).  
